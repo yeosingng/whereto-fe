@@ -33,7 +33,7 @@ const ImageCarousel = () => {
     <CarouselContainer>
       <Carousel
         showThumbs={false}
-        showArrows={true}
+        showArrows={false}
         showStatus={false}
         showIndicators={false}
         autoPlay={true}
