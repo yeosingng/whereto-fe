@@ -49,7 +49,21 @@ const ImageCarousel = () => {
         <CarouselContent>
           <MessageIcon />
           <CarouselText>
-            Invite your friends
+            Invite
+          </CarouselText>
+        </CarouselContent>
+
+        <CarouselContent>
+          <LocationPinIcon />
+          <CarouselText>
+            Suggest Locations
+          </CarouselText>
+        </CarouselContent>
+
+        <CarouselContent>
+          <BalletIcon />
+          <CarouselText>
+            Vote
           </CarouselText>
         </CarouselContent>
       </Carousel>
