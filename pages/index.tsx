@@ -33,14 +33,15 @@ const ImageCarousel = () => {
     <CarouselContainer>
       <Carousel
         showThumbs={false}
-        showArrows={false}
+        showArrows={true}
         showStatus={false}
+        showIndicators={false}
         autoPlay={true}
         infiniteLoop={true}
       >
-        {imageAndText.map(({ image, text }) => {
+        {imageAndText.map(({ image, text }, i) => {
           return (
-            <CarouselContent>
+            <CarouselContent key={i}>
               {image()}
 
               <CarouselText>
@@ -89,6 +90,7 @@ const ButtonContainer = styled.div`
 const CarouselContainer = styled.div`
   max-width: 600px;
   margin-top: 20px;
+  padding-inline-start: 0;
   @media screen and (max-width: 768px) {
     max-width: 300px;
   }
