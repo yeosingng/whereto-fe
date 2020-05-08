@@ -1,5 +1,7 @@
+import { ThemeProvider } from 'styled-components'
 import styled from 'styled-components'
 import Head from 'next/head'
+import theme from '../styles/theme'
 
 export default function Layout(props) {
   return (
@@ -7,18 +9,21 @@ export default function Layout(props) {
       <Head>
         <title>Whereto?</title>
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
       </Head>
 
-      <Main>
-        {props.children}
-      </Main>
+      <ThemeProvider theme={theme}>
+        <Main>
+          {props.children}
+        </Main>
+      </ThemeProvider>
 
       <style jsx global>{`
         html,
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }
@@ -31,15 +36,9 @@ export default function Layout(props) {
   )
 }
 
-const Main = styled.div`
+const Main = styled.main`
   min-height: 100vh;
-  padding: 0 0.5rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-
-const Container = styled.div`
-
 `

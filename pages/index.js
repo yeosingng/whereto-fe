@@ -1,16 +1,14 @@
 import Head from 'next/head'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
+import Header from '../components/Header'
+import Text from '../components/Text'
 
 export default function Home() {
   return (
     <Layout>
-      <div>Hello World!</div>
+      <Header />
+      <Text>Hello World!</Text>
     </Layout>
   )
 }
-
-
-const Header = styled.div`
-  color: red;
-`
