@@ -43,8 +43,6 @@ export default function Layout({ children, header }) {
 
 const Main = styled.main`
   min-height: 100vh;
-  padding: 0 0 30px 0;
   display: flex;
   flex-direction: column;
-
 `
