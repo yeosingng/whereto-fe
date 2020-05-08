@@ -5,9 +5,12 @@ import Header from '../components/Header'
 
 export default function Home() {
   return (
-    <Layout>
-      <Header />
-      Hello World!
+    <Layout header>
     </Layout>
   )
 }
+
+
+const Body = styled.div`
+
+`

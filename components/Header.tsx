@@ -16,7 +16,7 @@ const Container = styled.div`
   height: 100px;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.orange};
+  background-color: ${({ theme }) => theme.colors.main};
   box-shadow: -2px -3px 33px -7px rgba(0,0,0,0.75);
 `
 

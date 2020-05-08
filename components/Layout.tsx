@@ -1,9 +1,13 @@
-import { ThemeProvider } from 'styled-components'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import Head from 'next/head'
-import theme from '../styles/theme'
+import { myTheme } from '../styles/my-theme'
+import Header from '../components/Header'
 
-export default function Layout(props) {
+type Layout = {
+  header: boolean,
+}
+
+export default function Layout({ children, header }) {
   return (
     <>
       <Head>
@@ -12,9 +16,10 @@ export default function Layout(props) {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
       </Head>
 
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={myTheme}>
         <Main>
-          {props.children}
+          {header && <Header />}
+          {children}
         </Main>
       </ThemeProvider>
 
