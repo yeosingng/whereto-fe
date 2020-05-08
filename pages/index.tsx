@@ -35,7 +35,7 @@ const ImageCarousel = () => {
         showThumbs={false}
         showArrows={false}
         showStatus={false}
-        showIndicators={true}
+        showIndicators={false}
         autoPlay={true}
         infiniteLoop={true}
       >
