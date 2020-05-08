@@ -1,23 +1,74 @@
-import Head from 'next/head'
 import styled from 'styled-components'
-import { Layout, Header, Button } from '../components/'
+import { Layout, Button } from '../components/'
+import { Carousel } from 'react-responsive-carousel'
+import { GroupIcon, LocationPinIcon, MessageIcon, BalletIcon } from '../images'
+
+type ImageData = {
+  image: Function,
+  text: String,
+}
+
+let imageAndText: Array<ImageData>
+imageAndText = [
+  {
+    image: GroupIcon,
+    text: 'Create a room'
+  },
+  {
+    image: MessageIcon,
+    text: 'Invite your friends'
+  },
+  {
+    image: LocationPinIcon,
+    text: 'Suggest Locations'
+  },
+  {
+    image: BalletIcon,
+    text: 'Vote!'
+  },
+]
+
+const ImageCarousel = () => {
+  return (
+    <CarouselContainer>
+      <Carousel
+        showThumbs={false}
+        showArrows={false}
+        showStatus={false}
+        autoPlay={true}
+        infiniteLoop={true}
+      >
+        {imageAndText.map(({ image, text }) => {
+          return (
+            <CarouselContent>
+              {image()}
+
+              <CarouselText>
+                {text}
+              </CarouselText>
+            </CarouselContent>
+          )
+        })}
+      </Carousel>
+    </CarouselContainer>
+  )
+}
 
 export default function Home() {
   return (
     <Layout header>
       <Container>
-        <Images />
+        <ImageCarousel />
 
         <ButtonContainer style={{ marginTop: 40 }}>
           <Button>
             Create
           </Button>
 
-          <Button style={{ marginLeft: 40 }}>
+          <Button style={{ marginLeft: 40, width: 110 }}>
             Join
           </Button>
         </ButtonContainer>
-
       </Container>
     </Layout>
   )
@@ -30,11 +81,32 @@ const Container = styled.div`
   margin: auto;
 `
 
-const Images = styled.div`
-  height: 200px;
-  border: 1px solid black;
-`
-
 const ButtonContainer = styled.div`
   display: flex;
+  justify-content: center;
+`
+
+const CarouselContainer = styled.div`
+  max-width: 600px;
+  margin-top: 20px;
+  @media screen and (max-width: 768px) {
+    max-width: 300px;
+  }
+`
+
+const CarouselContent = styled.div`
+  background-color: white;
+  margin: auto;
+  padding: 10px 50px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 400px;
+`
+
+const CarouselText = styled.div`
+  padding: 40px 0px;
+  font-size: 24px;
+  font-weight: 500;
 `

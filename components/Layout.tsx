@@ -1,6 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components'
 import Head from 'next/head'
-import { myTheme } from '../styles/my-theme'
+import { myTheme } from '../styles/myTheme'
 import Header from '../components/Header'
 
 type Layout = {
@@ -43,7 +43,8 @@ export default function Layout({ children, header }) {
 
 const Main = styled.main`
   min-height: 100vh;
-  padding: 0;
+  padding: 0 0 30px 0;
   display: flex;
   flex-direction: column;
+
 `

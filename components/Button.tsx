@@ -24,5 +24,9 @@ const StyledButton = styled.button`
   :focus, :hover {
     outline: 0;
     background: grey;
+    cursor: pointer;
+  }
+  :blur {
+    background: white;
   }
 `
