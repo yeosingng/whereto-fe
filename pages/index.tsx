@@ -39,17 +39,19 @@ const ImageCarousel = () => {
         autoPlay={true}
         infiniteLoop={true}
       >
-        {imageAndText.map(({ image, text }, i) => {
-          return (
-            <CarouselContent key={i}>
-              {image()}
+        <CarouselContent>
+          <GroupIcon />
+          <CarouselText>
+            Create a Room
+          </CarouselText>
+        </CarouselContent>
 
-              <CarouselText>
-                {text}
-              </CarouselText>
-            </CarouselContent>
-          )
-        })}
+        <CarouselContent>
+          <MessageIcon />
+          <CarouselText>
+            Invite your friends
+          </CarouselText>
+        </CarouselContent>
       </Carousel>
     </CarouselContainer>
   )
