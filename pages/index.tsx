@@ -93,6 +93,7 @@ const CarouselContainer = styled.div`
   padding-inline-start: 0;
   @media screen and (max-width: 768px) {
     max-width: 300px;
+    margin-top: 0px;
   }
 `
 
