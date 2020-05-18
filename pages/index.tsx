@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Layout, Button } from '../components/'
 import { Carousel } from 'react-responsive-carousel'
 import { GroupIcon, LocationPinIcon, MessageIcon, BalletIcon } from '../images'
+import Link from 'next/link'
 
 type ImageData = {
   image: Function,
@@ -38,6 +39,8 @@ const ImageCarousel = () => {
         showIndicators={false}
         autoPlay={true}
         infiniteLoop={true}
+        swipeable={false}
+        interval={4000}
       >
         {imageAndText.map(({ image, text }, i) => {
           return (
@@ -61,10 +64,12 @@ export default function Home() {
       <Container>
         <ImageCarousel />
 
-        <ButtonContainer style={{ marginTop: 40 }}>
-          <Button>
-            Create
-          </Button>
+        <ButtonContainer style={{ marginTop: 0 }}>
+          <Link href='/room/create' passHref>
+            <Button>
+              Create
+            </Button>
+          </Link>
 
           <Button style={{ marginLeft: 40, width: 110 }}>
             Join

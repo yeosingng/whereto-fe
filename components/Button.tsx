@@ -1,20 +1,24 @@
 import styled from 'styled-components'
+import { forwardRef } from 'react'
 
-type ButtonProps = {
-  children: React.ReactNode,
-  style?: Object,
-}
+type ButtonProps = React.HTMLProps<HTMLButtonElement>
 
-export default function Button(props: ButtonProps) {
-  const { children, style } = props
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ children, style, onClick, href }: any, ref) =>  {
   return (
-    <StyledButton style={style}>
+    <StyledButton style={style} onClick={onClick} ref={ref}>
       {children}
     </StyledButton>
   )
-}
+})
+
+const StyledAnchor = styled.a`
+  text-decoration: inherit;
+  color: inherit;
+`
 
 const StyledButton = styled.button`
+  display: flex;
+  justify-content: center;
   padding: 10px 20px;
   border: 2px solid black;
   border-radius: 4px;
@@ -30,3 +34,5 @@ const StyledButton = styled.button`
     background: white;
   }
 `
+
+export default Button

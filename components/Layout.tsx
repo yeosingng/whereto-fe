@@ -12,6 +12,8 @@ export default function Layout({ children, header }) {
     <>
       <Head>
         <title>whereto?</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
       </Head>
