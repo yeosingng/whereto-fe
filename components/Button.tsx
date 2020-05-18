@@ -1,20 +1,16 @@
 import styled from 'styled-components'
 import { forwardRef } from 'react'
+import { myTheme } from  '../styles/myTheme'
 
 type ButtonProps = React.HTMLProps<HTMLButtonElement>
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ children, style, onClick, href }: any, ref) =>  {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ children, style, onClick, disabled, className }: any, ref) =>  {
   return (
-    <StyledButton style={style} onClick={onClick} ref={ref}>
+    <StyledButton className={className} style={style} onClick={onClick} ref={ref} disabled={disabled}>
       {children}
     </StyledButton>
   )
 })
-
-const StyledAnchor = styled.a`
-  text-decoration: inherit;
-  color: inherit;
-`
 
 const StyledButton = styled.button`
   display: flex;
@@ -27,12 +23,13 @@ const StyledButton = styled.button`
   font-size: 24px;
   :focus, :hover {
     outline: 0;
-    background: grey;
+    background: ${myTheme.colors.secondary};
     cursor: pointer;
-  }
+  };
   :blur {
     background: white;
-  }
+  };
+  opacity: ${({ disabled }) => disabled ? 0.25 : 1};
 `
 
 export default Button

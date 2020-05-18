@@ -5,7 +5,7 @@ const myTheme: DefaultTheme = {
 
   colors: {
     main: '#ffc830',
-    secondary: 'magenta',
+    secondary: '#dbdad9',
   },
 }
 
